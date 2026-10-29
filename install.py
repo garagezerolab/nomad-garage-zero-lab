@@ -16,7 +16,7 @@ import time
 import urllib.request
 
 NOMAD_REVISION = "54ee30a44902e5c252b477f8685c26ec3064ab72"
-GEOINTEL_REVISION = "32ca07b70a7d535da2c00a359f853ec541ff35a8"
+GEOINTEL_REVISION = "f13c60c477a000ddc0d8f2d24d5fb4f5605656b4"
 
 
 def run_command(args, **subprocess_options):
@@ -68,7 +68,6 @@ def build_compose_config(geointel_root, bind_ip, port, uid, gid):
                     "geointel-dependencies:/app/node_modules",
                 ],
                 "mem_limit": "2g",
-                "cpus": 1.5,
                 "security_opt": ["no-new-privileges:true"],
                 "cap_drop": ["ALL"],
                 "logging": {
